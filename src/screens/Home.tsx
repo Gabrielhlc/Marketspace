@@ -1,8 +1,9 @@
 import { TouchableOpacity } from "react-native";
-import { HStack, ScrollView, Text, VStack } from "native-base";
+import { HStack, Input, ScrollView, Text, VStack } from "native-base";
 
 import { Avatar } from "@components/Avatar";
 import { Button } from "@components/Button";
+import { Search } from "@components/Search";
 
 import { ArrowRight, Tag } from "phosphor-react-native";
 
@@ -11,8 +12,9 @@ export function Home() {
         <ScrollView
             contentContainerStyle={{ flexGrow: 1 }}
             showsVerticalScrollIndicator={false}
+            bg="gray.600"
         >
-            <VStack px={5}>
+            <VStack px={5} space={8}>
                 <HStack mt={16} alignItems="center" space={2}>
                     <Avatar size={55} source={{ uri: "https://github.com/Gabrielhlc.png" }} alt="Avatar" />
                     <Text
@@ -31,7 +33,7 @@ export function Home() {
                     />
                 </HStack>
 
-                <VStack mt={8} space={3}>
+                <VStack space={3}>
                     <Text
                         fontSize="sm"
                         color="gray.300"
@@ -47,7 +49,7 @@ export function Home() {
                         pl={4}
                         alignItems="center"
                         justifyContent="space-between"
-                        background="rgba(var(--blue-light), 0.1)"
+                        background="rgba(100, 122, 199, 0.1)"
                         borderRadius={6}
                     >
                         <HStack alignItems="center" space={4}>
@@ -85,6 +87,18 @@ export function Home() {
                             </HStack>
                         </TouchableOpacity>
                     </HStack>
+                </VStack>
+
+                <VStack space={3}>
+                    <Text
+                        fontSize="sm"
+                        color="gray.300"
+                    >
+                        Compre produtos variados
+                    </Text>
+
+                    <Search />
+
                 </VStack>
             </VStack>
 

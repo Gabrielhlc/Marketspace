@@ -37,6 +37,9 @@ export function Input({ placeholder, input = "text", ...rest }: Props) {
                 borderRadius={6}
                 fontSize="md"
                 placeholder={placeholder}
+                _focus={{
+                    bg: "gray.700"
+                }}
                 {...rest}
             />
 
