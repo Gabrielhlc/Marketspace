@@ -11,7 +11,6 @@ export function Button({ title, variant, ...rest }: Props) {
 
     return (
         <NativeBaseButton
-            w="full"
             p={3}
             h={12}
             bg={variant === 'blue' ? "blue-light" : (variant === 'gray' ? "gray.500" : "gray.100")}

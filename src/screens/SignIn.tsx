@@ -1,16 +1,25 @@
 import { Center, Text, VStack, View } from "native-base";
+import { useNavigation } from '@react-navigation/native';
 
 import { Input } from "@components/Input";
 import { Button } from "@components/Button";
 
 import LogoSvg from '@assets/logo.svg';
+import { AuthNavigatorRoutesProps } from "@routes/auth.routes";
 
 export function SignIn() {
+
+    const navigation = useNavigation<AuthNavigatorRoutesProps>();
+
+    function handleNewAccount() {
+        navigation.navigate('signUp')
+    }
+
     return (
         <VStack>
             <View
                 px={10}
-                backgroundColor="gray.600"
+                bg="gray.600"
                 pb="16"
                 borderBottomRadius={24}
             >
@@ -37,6 +46,7 @@ export function SignIn() {
                     <Input placeholder="Senha" input="password" />
 
                     <Button
+                        w="100%"
                         title="Entrar"
                         variant="blue"
                         mt={4}
@@ -53,9 +63,11 @@ export function SignIn() {
                 </Text>
 
                 <Button
+                    w="100%"
                     title="Criar uma conta"
                     variant='gray'
                     mt={4}
+                    onPress={handleNewAccount}
                 />
             </Center>
         </VStack>

@@ -1,4 +1,5 @@
 import { Center, ScrollView, Text, VStack } from "native-base";
+import { useNavigation } from '@react-navigation/native';
 
 import { Avatar } from "@components/Avatar";
 import { Input } from "@components/Input";
@@ -8,6 +9,13 @@ import LogoSvg from '@assets/logo.svg';
 import avatarDefault from '@assets/avatarDefault.png';
 
 export function SignUp() {
+
+    const navigation = useNavigation();
+
+    function handleGoBack() {
+        navigation.goBack();
+    }
+
     return (
         <ScrollView
             contentContainerStyle={{ flexGrow: 1 }}
@@ -60,6 +68,7 @@ export function SignUp() {
                 </VStack>
 
                 <Button
+                    w="100%"
                     title="Criar"
                     variant="black"
                     mt={6}
@@ -71,9 +80,11 @@ export function SignUp() {
                     </Text>
 
                     <Button
+                        w="100%"
                         title="Ir para o login"
                         variant='gray'
                         mt={4}
+                        onPress={handleGoBack}
                     />
                 </Center>
             </VStack>
