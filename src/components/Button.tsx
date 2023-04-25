@@ -1,13 +1,13 @@
-import { Button as NativeBaseButton, IButtonProps, Text, Icon } from 'native-base';
+import { Button as NativeBaseButton, IButtonProps, Text, HStack } from 'native-base';
+import { Feather } from '@expo/vector-icons'
 
 type Props = IButtonProps & {
+    icon?: keyof typeof Feather.glyphMap;
     title: string;
     variant: 'blue' | 'gray' | 'black';
-
 }
 
-export function Button({ title, variant, ...rest }: Props) {
-
+export function Button({ icon, title, variant, ...rest }: Props) {
 
     return (
         <NativeBaseButton
@@ -17,14 +17,25 @@ export function Button({ title, variant, ...rest }: Props) {
             rounded="md"
             {...rest}
         >
-            <Text
-                color={variant === 'blue' || variant === 'black' ? "gray.700" : "gray.200"}
-                fontFamily="heading"
-                fontSize="sm"
-            >
-                {title}
-                <Icon />
-            </Text>
+            <HStack alignItems="center" space={2}>
+                {
+                    icon &&
+                    <Feather
+                        name={icon}
+                        color={variant === 'blue' || variant === 'black' ? "white" : "black"}
+                        size={20}
+                    />
+                }
+
+                <Text
+                    color={variant === 'blue' || variant === 'black' ? "gray.700" : "gray.200"}
+                    fontFamily="heading"
+                    fontSize="sm"
+                >
+                    {title}
+                </Text>
+            </HStack>
+
         </NativeBaseButton>
     )
 }

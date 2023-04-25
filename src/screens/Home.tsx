@@ -1,6 +1,7 @@
+import { HStack, ScrollView, Text, VStack } from "native-base";
+
 import { Avatar } from "@components/Avatar";
 import { Button } from "@components/Button";
-import { HStack, ScrollView, Text, VStack } from "native-base";
 
 export function Home() {
     return (
@@ -19,7 +20,12 @@ export function Home() {
                         Boas vindas, Gabriel!
                     </Text>
 
-                    <Button flex={1} title="+  Criar anúncio" variant="black" />
+                    <Button
+                        flex={1}
+                        icon="plus"
+                        title="Criar anúncio"
+                        variant="black"
+                    />
                 </HStack>
             </VStack>
 

@@ -21,7 +21,7 @@ export default function App() {
           translucent
         />
 
-        {fontsLoaded ? <Routes /> : <Loading />}
+        {fontsLoaded ? <Home /> : <Loading />}
       </NativeBaseProvider>
     </SafeAreaProvider>
   );
